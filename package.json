@@ -5,7 +5,7 @@
   "author": "Filipe Almeida <filipesilva504@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec ts-node ./src/index.js",
+    "start": "nodemon --exec ts-node ./src/index.ts",
     "dev": "nodemon --exec ts-node ./src/index.ts",
     "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
     "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
