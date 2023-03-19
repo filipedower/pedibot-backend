@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { sizeRepository } from "../repositories/sizeRepository";
 
+//teste
+
 export class SizeController {
     async create(req: Request, res: Response) {
         const { name } = req.body
