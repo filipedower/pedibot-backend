@@ -47,8 +47,6 @@ export class ProductController {
                 }
             })
 
-            console.log(productsList)
-
             return res.status(200).json(productsList)
         } catch (error) {
             console.error(error)
