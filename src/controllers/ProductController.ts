@@ -47,7 +47,11 @@ export class ProductController {
                 }
             })
 
-            return res.status(200).json(productsList)
+            const mappedProducts = await productsList.filter(product => {
+                return product.categories[0].id !== 2
+            })
+
+            return res.status(200).json(mappedProducts)
         } catch (error) {
             console.error(error)
             return
