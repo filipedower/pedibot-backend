@@ -14,6 +14,7 @@ routes.get('/product/:productId', new ProductController().productById)
 routes.post('/validate', new UserAdminController().validateToken)
 routes.get('/drinks', new CategoryController().getDrinks)
 
+routes.post('/admin', new UserAdminController().create)
 routes.use(authMiddleware)
 
 //All routes for category table
@@ -32,7 +33,6 @@ routes.post('/consumer', new ConsumerController().create)
 routes.get('/consumer', new ConsumerController().lisConsumers)
 
 //All routes for user admin table
-routes.post('/admin', new UserAdminController().create)
 routes.get('/profile', new UserAdminController().getProfile)
 
 export default routes
