@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { CategoryController } from './controllers/CategoryController'
 import { ConsumerController } from './controllers/ConsumerController'
+import { OrderController } from './controllers/OrderController'
 import { ProductController } from './controllers/ProductController'
 import { SizeController } from './controllers/SizeController'
 import { UserAdminController } from './controllers/UserAdminController'
@@ -15,6 +16,8 @@ routes.post('/validate', new UserAdminController().validateToken)
 routes.get('/drinks', new CategoryController().getDrinks)
 
 routes.post('/admin', new UserAdminController().create)
+
+routes.post('/order', new OrderController().create)
 
 routes.use(authMiddleware)
 
