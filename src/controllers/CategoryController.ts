@@ -23,9 +23,29 @@ export class CategoryController {
 
     async getCategories(req: Request, res: Response) {
         try {
-            const categoriesList = await categoryRepository.find()
+            const categoriesList = await categoryRepository.find({
+                relations: {
+                    products: true
+                }
+            })
 
             return res.status(200).json(categoriesList)
+        } catch (error) {
+            console.error(error)
+            return res.status(500).json({ message: 'Internal Server Error' })
+        }
+    }
+
+    async getDrinks(req: Request, res: Response) {
+        try {
+            const drinksList = await categoryRepository.find({
+                where: { id: 2 },
+                relations: {
+                    products: true
+                }
+            })
+
+            return res.status(200).json(drinksList)
         } catch (error) {
             console.error(error)
             return res.status(500).json({ message: 'Internal Server Error' })

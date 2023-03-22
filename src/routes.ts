@@ -12,6 +12,7 @@ routes.post('/login', new UserAdminController().login)
 routes.get('/products', new ProductController().listProducts)
 routes.get('/product/:productId', new ProductController().productById)
 routes.post('/validate', new UserAdminController().validateToken)
+routes.get('/drinks', new CategoryController().getDrinks)
 
 routes.use(authMiddleware)
 
