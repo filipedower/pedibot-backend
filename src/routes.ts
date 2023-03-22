@@ -15,6 +15,7 @@ routes.post('/validate', new UserAdminController().validateToken)
 routes.get('/drinks', new CategoryController().getDrinks)
 
 routes.post('/admin', new UserAdminController().create)
+
 routes.use(authMiddleware)
 
 //All routes for category table
